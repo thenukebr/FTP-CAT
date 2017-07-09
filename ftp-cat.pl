@@ -44,6 +44,8 @@ HERE
 print color("reset");
 if(defined($host) && defined($user)){
   if(defined($wordlist)){
+    print "[*] HOST: $host\n";
+	print "[*] Usuario: $user\n\n";
     open(WORDLIST, "<", "$wordlist");
 	while(<WORDLIST>){
 	  my $ftp = Net::FTP->new("$host", Debug => 0);
@@ -55,6 +57,8 @@ if(defined($host) && defined($user)){
 	close(WORDLIST);
   }else{
     print color("YELLOW"),"[!] Nenhuma wordlist escolhida, metodos em tempo-real:\n\n",color("reset");
+	print "[*] HOST: $host\n";
+	print "[*] Usuario: $user\n\n";
     print "[*] 1 - [0-9]\n";
 	print "\nBruteForce: ";
 	chomp(my $choose = <STDIN>);
