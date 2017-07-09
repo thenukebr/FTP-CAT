@@ -15,6 +15,7 @@ sub clear{
   }
 }
 
+clear();
 _ftp();
 
 my ($host,$wordlist) = undef;
@@ -25,8 +26,6 @@ $user = $ARGV[1] or warn "[*] Usuario padrao: anonymous" and sleep 3 and clear()
 unless(! defined($ARGV[2])){
   $wordlist = $ARGV[2];
 }
-
-clear();
 
 print color("BLUE");
 sub _ftp{
