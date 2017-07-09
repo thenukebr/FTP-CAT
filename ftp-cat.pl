@@ -27,7 +27,6 @@ unless(! defined($ARGV[2])){
   $wordlist = $ARGV[2];
 }
 
-print color("BLUE");
 sub _ftp{
 print color("BLUE"), <<HERE;
 \n\t######## ######## ########           ######     ###    ######## 
