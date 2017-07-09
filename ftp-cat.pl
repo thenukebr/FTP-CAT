@@ -29,7 +29,7 @@ unless(! defined($ARGV[2])){
 
 print color("BLUE");
 sub _ftp{
-print <<HERE;
+print color("BLUE"), <<HERE;
 \n\t######## ######## ########           ######     ###    ######## 
 \t##          ##    ##     ##         ##    ##   ## ##      ##    
 \t##          ##    ##     ##         ##        ##   ##     ##    
